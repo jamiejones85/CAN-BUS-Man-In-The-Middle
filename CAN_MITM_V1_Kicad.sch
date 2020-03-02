@@ -1,0 +1,178 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_ST_STM32F1:STM32F105RBTx U?
+U 1 1 5E5CD081
+P 5650 3250
+F 0 "U?" H 5650 1361 50  0000 C CNN
+F 1 "STM32F105RBTx" H 5650 1270 50  0000 C CNN
+F 2 "Package_QFP:LQFP-64_10x10mm_P0.5mm" H 5050 1550 50  0001 R CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00220364.pdf" H 5650 3250 50  0001 C CNN
+	1    5650 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Interface_CAN_LIN:SN65HVD234 IC2
+U 1 1 5E5D3022
+P 1950 1300
+F 0 "IC2" H 1950 1781 50  0000 C CNN
+F 1 "SN65HVD234" H 1950 1690 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 1950 800 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn65hvd234.pdf" H 1850 1700 50  0001 C CNN
+	1    1950 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Interface_CAN_LIN:SN65HVD234 IC3
+U 1 1 5E5D4162
+P 2050 5800
+F 0 "IC3" H 2050 6281 50  0000 C CNN
+F 1 "SN65HVD234" H 2050 6190 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 2050 5300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn65hvd234.pdf" H 1950 6200 50  0001 C CNN
+	1    2050 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E5D4B49
+P 1950 2200
+F 0 "#PWR?" H 1950 1950 50  0001 C CNN
+F 1 "GND" H 1955 2027 50  0000 C CNN
+F 2 "" H 1950 2200 50  0001 C CNN
+F 3 "" H 1950 2200 50  0001 C CNN
+	1    1950 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E5D51C1
+P 2050 6750
+F 0 "#PWR?" H 2050 6500 50  0001 C CNN
+F 1 "GND" H 2055 6577 50  0000 C CNN
+F 2 "" H 2050 6750 50  0001 C CNN
+F 3 "" H 2050 6750 50  0001 C CNN
+	1    2050 6750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 1700 1950 2200
+Wire Wire Line
+	2050 6200 2050 6500
+$Comp
+L Device:R_Small_US R4
+U 1 1 5E5D791B
+P 2850 5850
+F 0 "R4" H 2918 5896 50  0000 L CNN
+F 1 "120R" H 2918 5805 50  0000 L CNN
+F 2 "" H 2850 5850 50  0001 C CNN
+F 3 "~" H 2850 5850 50  0001 C CNN
+	1    2850 5850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 5800 2500 5800
+Wire Wire Line
+	2500 5800 2500 5750
+Wire Wire Line
+	2500 5750 2850 5750
+Wire Wire Line
+	2450 5900 2500 5900
+Wire Wire Line
+	2500 5900 2500 5950
+Wire Wire Line
+	2500 5950 2850 5950
+$Comp
+L power:GND #PWR?
+U 1 1 5E5DA8C7
+P 1200 6200
+F 0 "#PWR?" H 1200 5950 50  0001 C CNN
+F 1 "GND" H 1205 6027 50  0000 C CNN
+F 2 "" H 1200 6200 50  0001 C CNN
+F 3 "" H 1200 6200 50  0001 C CNN
+	1    1200 6200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 6000 1200 6000
+Wire Wire Line
+	1200 6000 1200 6200
+Wire Wire Line
+	2850 6500 2050 6500
+Connection ~ 2050 6500
+Wire Wire Line
+	2050 6500 2050 6750
+Wire Wire Line
+	2850 6300 3550 6300
+Wire Wire Line
+	3550 6300 3550 5500
+Wire Wire Line
+	3550 5500 2050 5500
+Wire Wire Line
+	1650 5900 1200 5900
+Wire Wire Line
+	1200 5900 1200 5500
+Wire Wire Line
+	1200 5500 2050 5500
+Connection ~ 2050 5500
+$Comp
+L Device:CP1_Small C10
+U 1 1 5E5DC9C2
+P 2850 6400
+F 0 "C10" H 2941 6446 50  0000 L CNN
+F 1 "0.1uF" H 2941 6355 50  0000 L CNN
+F 2 "" H 2850 6400 50  0001 C CNN
+F 3 "~" H 2850 6400 50  0001 C CNN
+	1    2850 6400
+	1    0    0    -1  
+$EndComp
+Text Label 2050 6250 0    50   ~ 0
+GND
+$Comp
+L SR05S3V3:SR05S3V3 PS1
+U 1 1 5E5DFFAB
+P 9650 2800
+F 0 "PS1" H 10128 2846 50  0000 L CNN
+F 1 "SR05S3V3" H 10128 2755 50  0000 L CNN
+F 2 "MODULE" H 9650 2800 50  0001 C CNN
+F 3 "DOCUMENTATION" H 9650 2800 50  0001 C CNN
+	1    9650 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Schottky_ALT D1
+U 1 1 5E5D124A
+P 9100 1600
+F 0 "D1" H 9100 1816 50  0000 C CNN
+F 1 "SS54B" H 9100 1725 50  0000 C CNN
+F 2 "" H 9100 1600 50  0001 C CNN
+F 3 "~" H 9100 1600 50  0001 C CNN
+	1    9100 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 1600 8650 1600
+Wire Wire Line
+	8650 2700 8900 2700
+Text Label 9700 1600 0    50   ~ 0
+12VIN
+Wire Wire Line
+	9700 1600 9250 1600
+Wire Wire Line
+	8900 2900 8950 2900
+Wire Wire Line
+	8650 1600 8650 2700
+$EndSCHEMATC
